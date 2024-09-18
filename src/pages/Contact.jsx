@@ -4,27 +4,27 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name : "",
-    email : "",
-    message : ""
-  })
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    alert(`Message send successfully to ${formData.email}` );
+    e.preventDefault();
+    alert(`Message send successfully to ${formData.email}`);
     setFormData({
       name: "",
       email: "",
-      message: ""
+      message: "",
     });
-  }
+  };
 
   return (
     <div className="lg:flex lg:px-40 xl:px-20 md:px-20 p-5 bg-[#1A1A29] pt-20 items-start justify-between">
@@ -48,7 +48,22 @@ const Contact = () => {
         <p className="text-[20px] md:p-4">
           Contact me, let’s make magic together
         </p>
-        <form className=" bg-transparent" onSubmit={handleSubmit}>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input
+            type="hidden"
+            name="apikey"
+            value="c12ec7d0-5935-48f5-a013-1698fe3fae47"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="New Submission from Contact Form"
+          />
+          {/* <input
+            type="hidden"
+            name="redirect"
+            value="https://your-site.com/success"
+          /> */}
           <div className="bg-[#848191] mb-5 rounded">
             <input
               type="text"
@@ -56,6 +71,7 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
+              required
               className="text-white border-none bg-transparent p-2 w-[90%] outline-none"
             />
           </div>
@@ -66,20 +82,24 @@ const Contact = () => {
               value={formData.email}
               placeholder="Email:"
               onChange={handleInputChange}
+              required
               className="border-none bg-transparent p-2 w-[90%] outline-none"
             />
           </div>
           <div className="bg-[#848191] rounded mb-5">
             <textarea
-              type="text"
               name="message"
               value={formData.message}
               placeholder="Message:"
               onChange={handleInputChange}
+              required
               className="border-none bg-transparent p-2 w-[90%] outline-none"
             />
           </div>
-          <button type="submit" className="py-2 px-4 bg-[#7562E0] rounded-lg flex items-center justify-between gap-2">
+          <button
+            type="submit"
+            className="py-2 px-4 bg-[#7562E0] rounded-lg flex items-center justify-between gap-2"
+          >
             Send
           </button>
         </form>

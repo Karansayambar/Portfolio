@@ -48,10 +48,10 @@ const project = [
 
 const Projects = () => {
   return (
-    <div className="lg:flex flex-wrap gap-10 py-4 box-border">
+    <div className="lg:flex flex-wrap gap-10 mx-auto py-4 pt-10 box-border">
       {project &&
         project.map((item, index) => (
-          <div key={index} className=" sm:w-[350px] sm:m-0 md:w-[580px] lg:w-[530px] xl:w-[450px] lg:m-auto  sm:h-[440px] md:h-[450px] bg-[#31313F] p-4 rounded-lg box-border gap-5 my-10 md:my-10 hover:-translate-y-1 hover:scale-105  duration-300">
+          <div key={index} className=" sm:w-[330px] sm:m-0 md:w-[550px] lg:w-[530px] xl:w-[560px] lg:m-auto  sm:h-[440px] md:h-[400px] bg-[#31313F] p-4 rounded-lg box-content gap-5 my-10 md:my-10 hover:-translate-y-1 hover:scale-105  duration-300">
             <div className="border-2 border-[#7562E0] rounded-lg w-[100%] h-[205px] my-5">
               <img src={item.img} className="w-[100%] h-[200px]"/>
             </div>

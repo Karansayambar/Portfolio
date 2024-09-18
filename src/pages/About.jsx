@@ -3,7 +3,7 @@ import Services from "../components/Services";
 
 const About = () => {
   return (
-    <div className="lg:px-40 xl:px-20 md:px-20 px-2 bg-[#1A1A29] pt-10">
+    <div className="lg:px-30 xl:px-20 md:px-20 px-2 bg-[#1A1A29] pt-10">
       <p className="text-[32px] text-[#7562E0] font-semibold pb-10">
         About me:
       </p>
