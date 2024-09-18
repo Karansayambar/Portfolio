@@ -27,7 +27,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="lg:flex lg:px-40 md:px-20 p-5 bg-[#1A1A29] pt-20 items-start justify-between">
+    <div className="lg:flex lg:px-40 xl:px-20 md:px-20 p-5 bg-[#1A1A29] pt-20 items-start justify-between">
       <div>
         <p className="text-[32px] font-semibold text-[#7562E0]">
           Connect with me:
@@ -54,6 +54,7 @@ const Contact = () => {
               type="text"
               placeholder="Name:"
               name="name"
+              value={formData.name}
               onChange={handleInputChange}
               className="text-white border-none bg-transparent p-2 w-[90%] outline-none"
             />
@@ -62,6 +63,7 @@ const Contact = () => {
             <input
               type="text"
               name="email"
+              value={formData.email}
               placeholder="Email:"
               onChange={handleInputChange}
               className="border-none bg-transparent p-2 w-[90%] outline-none"
@@ -71,6 +73,7 @@ const Contact = () => {
             <textarea
               type="text"
               name="message"
+              value={formData.message}
               placeholder="Message:"
               onChange={handleInputChange}
               className="border-none bg-transparent p-2 w-[90%] outline-none"
