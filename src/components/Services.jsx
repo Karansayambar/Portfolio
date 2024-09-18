@@ -27,12 +27,12 @@ const service = [
 ];
 
 const Services = () => {
-  return <div className="md:flex gap-5 m-auto py-10 ">
+  return <div className="lg:flex gap-6 m-auto py-10 ">
     {
         service.map((service, index) => (
-            <div key={index} className="h-[300px] w-[300px] border-2 rounded-md m-auto my-5 p-5 flex flex-col items-center justify-evenly text-center hover:border-[#7562E0] hover:-translate-y-1 hover:scale-110  duration-300" >
-                {React.cloneElement(service.icon, { size: 50 })}
-                <p className="text-[32px]">{service.head}</p>
+            <div key={index} className="h-[280px] text-center w-[280px] md:w-[80%] lg:w-[300px] box-content border-2 rounded-md m-auto mx-auto my-5 p-5 flex flex-col items-center justify-evenly hover:border-[#7562E0] hover:-translate-y-1 hover:scale-105  duration-300" >
+                {React.cloneElement(service.icon, { size: 45 })}
+                <p className="text-[28px]">{service.head}</p>
                 <p>{service.disc}</p>
             </div>
         ))

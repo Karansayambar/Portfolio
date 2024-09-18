@@ -4,8 +4,8 @@ import { HashLink } from "react-router-hash-link";
 
 const Home = () => {
   return (
-    <div className="md:px-40 md:flex md:items-center md:justify-between px-5 bg-[#1A1A29] w-full mb-20">
-      <div className=" flex items-start flex-col justify-end md:pb-10 md:h-[550px] md:w-[550px] pt-10 w-full">
+    <div className="md:px-10 lg:px-40 md:flex lg:items-center md:justify-between px-5 bg-[#1A1A29] w-full mb-20">
+      <div className=" flex items-start flex-col justify-end md:pb-10 lg:h-[550px] lg:w-[550px]  pt-10 w-full">
         <motion.p
           className="text-[32px] font-semibold"
           initial={{ opacity: 0, x: 100 }}
@@ -50,7 +50,7 @@ const Home = () => {
           </button>
         </motion.span>
       </div>
-      <div className="relative md:h-[550px] md:w-[550px] w-[400px] h-[400px] overflow-hidden">
+      <div className="relative md:h-[400px] lg:h-[550px] md:w-[550px] w-[400px] h-[400px] overflow-hidden">
         <motion.img
           src="Ellipse 1.png"
           className="absolute h-[90%] w-[90%] md:left-[10%] md:top-[25%] top-[20%]"
@@ -64,8 +64,8 @@ const Home = () => {
           }}
         />
         <motion.img
-          src="sk.png"
-          className="absolute h-[100%] w-[100%] md:left-[5%] md:top-[17%] right-[7%] top-[10%]"
+          src="sk.avif"
+          className="absolute h-[70%] w-[70%] md:left-[20%] lg:top-[35%] left-[10%] top-[35%] rounded-[50%]"
           initial={{ y: 10 }}
           animate={{ y: -10 }}
           transition={{

@@ -58,15 +58,15 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="flex flex-nowrap md:flex-wrap items-center justify-center gap-4 m-auto overflow-x-auto ">
+    <div className="flex flex-wrap items-center justify-center gap-4 m-auto">
       {skills &&
         skills.map((skill) => (
           <div
             key={skill.id}
-            className="h-[170px] w-[200px] shrink-0 bg-[#848191] rounded-sm p-5 flex items-center justify-evenly flex-col hover:bg-[#7562E0] hover:-translate-y-1 hover:scale-100  duration-300"
+            className="h-[130px] w-[130px] shrink-0 box-content bg-[#848191] rounded-sm p-5 flex items-center justify-evenly flex-col hover:bg-[#7562E0] hover:-translate-y-1 hover:scale-100  duration-300"
           >
             {React.cloneElement(skill.icon, { size: 50 })}
-            <p className="text-[32px]">{skill.skill}</p>
+            <p className="text-[28px]">{skill.skill}</p>
           </div>
         ))}
     </div>
