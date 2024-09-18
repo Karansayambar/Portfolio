@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full flex items-center justify-between py-5 px-5 sm:px-10 lg:px-20 xl:px-40 text-white bg-[#181824]">
+    <div className="w-full flex items-center justify-between py-5 px-5 sm:px-10 lg:px-20 xl:px-30 text-white bg-[#181824]">
       <div>
         <p className="text-2xl font-bold text-justify capitalized">
           Karan Sayambar
