@@ -1,12 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-body{
-    color: white;
-    background-color: #181824;
-    font-size: 17px;
-    font-family:'Courier New', Courier, monospace;
-    margin: 0px;
-    padding: 0px;
+body {
+  color: white;
+  background-color: #181824;
+  font-size: 17px;
+  font-family: "Inter", serif;
+  margin: 0px;
+  padding: 0px;
 }

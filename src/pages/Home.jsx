@@ -4,7 +4,7 @@ import { HashLink } from "react-router-hash-link";
 
 const Home = () => {
   return (
-    <div className="md:px-10 lg:px-40 md:flex xl:px-20 lg:items-center md:justify-between px-5 bg-[#1A1A29] w-full mb-20">
+    <div className="md:px-10 lg:px-40 md:flex xl:px-30 lg:items-center md:justify-between px-5 bg-[#1A1A29] w-full mb-20">
       <div className=" flex items-start flex-col justify-end md:pb-10 lg:h-[550px] lg:w-[550px]  pt-10 w-full">
         <motion.p
           className="text-[32px] font-semibold"
@@ -64,7 +64,7 @@ const Home = () => {
           }}
         />
         <motion.img
-          src="sk.avif"
+          src="sk.webp"
           className="absolute h-[70%] w-[70%] md:left-[20%] lg:top-[35%] left-[10%] top-[35%] rounded-[50%]"
           initial={{ y: 10 }}
           animate={{ y: -10 }}

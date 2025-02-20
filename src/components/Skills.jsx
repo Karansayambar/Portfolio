@@ -58,7 +58,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4 m-auto">
+    <div className="flex flex-wrap items-center justify-center gap-4 xl:px-40 m-auto">
       {skills &&
         skills.map((skill) => (
           <div
