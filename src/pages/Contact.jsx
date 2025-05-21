@@ -16,39 +16,54 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Message send successfully to ${formData.email}`);
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-  };
-
   return (
-    <div className="lg:flex lg:px-40 xl:px-20 md:px-20 p-5 bg-[#1A1A29] pt-20 items-start justify-between">
-      <div>
-        <p className="text-[32px] font-semibold text-[#7562E0]">
-          Connect with me:
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-5 sm:px-8 md:px-14 lg:px-20 xl:px-36 py-16 bg-[#1A1A29] text-white gap-14">
+      {/* Left Section */}
+      <div className="text-center lg:text-left">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#7562E0] mb-4">
+          Let’s Connect
+        </h1>
+        <p className="text-base sm:text-lg mb-6 max-w-md mx-auto lg:mx-0">
+          Have a project in mind? Or just want to say hi? Let’s build something
+          incredible together.
         </p>
-        <p>Satisfied with me? Please contact me</p>
-        <span className="flex gap-4 text-3xl p-2 text-[#7562E0]">
-          <a href="linkedin.com/in/karan-sayambar-1125581ab">
+
+        <div className="flex justify-center lg:justify-start gap-6 text-3xl text-[#7562E0]">
+          <a
+            href="https://linkedin.com/in/karan-sayambar-1125581ab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition duration-300"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://github.com/Karansayambar">
+          <a
+            href="https://github.com/Karansayambar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition duration-300"
+          >
             <FaGithub />
           </a>
-          <FaDribbble />
-          <MdOutlineMailOutline />
-        </span>
+          <a href="#" className="hover:scale-110 transition duration-300">
+            <FaDribbble />
+          </a>
+          <a href="#" className="hover:scale-110 transition duration-300">
+            <MdOutlineMailOutline />
+          </a>
+        </div>
       </div>
-      <div>
-        <p className="text-[20px] md:p-4">
-          Contact me, let’s make magic together
-        </p>
-        <form action="https://api.web3forms.com/submit" method="POST">
+
+      {/* Right Section */}
+      <div className="w-full max-w-[500px] backdrop-blur-xl bg-white/5 rounded-xl p-6 sm:p-8 shadow-lg border border-[#2d2d3a]">
+        <h2 className="text-2xl font-semibold mb-6 text-[#7562E0] text-center">
+          Send a Message
+        </h2>
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          className="space-y-4"
+        >
           <input
             type="hidden"
             name="apikey"
@@ -59,48 +74,42 @@ const Contact = () => {
             name="subject"
             value="New Submission from Contact Form"
           />
-          {/* <input
-            type="hidden"
-            name="redirect"
-            value="https://your-site.com/success"
-          /> */}
-          <div className="bg-[#848191] mb-5 rounded">
-            <input
-              type="text"
-              placeholder="Name:"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              className="text-white border-none bg-transparent p-2 w-[90%] outline-none"
-            />
-          </div>
-          <div className="bg-[#848191] mb-5 rounded">
-            <input
-              type="text"
-              name="email"
-              value={formData.email}
-              placeholder="Email:"
-              onChange={handleInputChange}
-              required
-              className="border-none bg-transparent p-2 w-[90%] outline-none"
-            />
-          </div>
-          <div className="bg-[#848191] rounded mb-5">
-            <textarea
-              name="message"
-              value={formData.message}
-              placeholder="Message:"
-              onChange={handleInputChange}
-              required
-              className="border-none bg-transparent p-2 w-[90%] outline-none"
-            />
-          </div>
+
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            required
+            placeholder="Your Name"
+            className="w-full p-3 rounded-lg bg-white/10 text-white border border-[#7562E0] outline-none focus:ring-2 focus:ring-[#7562E0] transition"
+          />
+
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+            placeholder="Your Email"
+            className="w-full p-3 rounded-lg bg-white/10 text-white border border-[#7562E0] outline-none focus:ring-2 focus:ring-[#7562E0] transition"
+          />
+
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            required
+            placeholder="Your Message"
+            rows="5"
+            className="w-full p-3 rounded-lg bg-white/10 text-white border border-[#7562E0] outline-none focus:ring-2 focus:ring-[#7562E0] transition"
+          />
+
           <button
             type="submit"
-            className="py-2 px-4 bg-[#7562E0] rounded-lg flex items-center justify-between gap-2"
+            className="w-full py-3 bg-gradient-to-r from-[#7562E0] to-[#9c87e9] rounded-lg font-semibold hover:shadow-[0_0_25px_#7562E0] transition duration-300"
           >
-            Send
+            Send Message
           </button>
         </form>
       </div>
