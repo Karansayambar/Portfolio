@@ -35,7 +35,7 @@ const experiences = [
     current: true,
     summary:
       "Architecting .NET 8 microservices and modern web platforms for enterprise-scale clients.",
-    hero: { value: 100, suffix: "K+", label: "Users Served" },
+    hero: { value:9.5, suffix: "K+", label: "Users Served" },
    bullets: [
   { icon: <HiOutlineComputerDesktop />, text: "Developed responsive and reusable frontend modules using React.js and TypeScript" },
   { icon: <HiOutlineSquares2X2 />, text: "Built dynamic UI components, forms, and dashboards with scalable architecture" },
