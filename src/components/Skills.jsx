@@ -1,85 +1,101 @@
-import React from "react";
-import { FaCss3Alt, FaHtml5, FaJava, FaNodeJs, FaReact } from "react-icons/fa";
-import { SiExpress, SiJavascript, SiMongodb, SiMysql } from "react-icons/si";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { FaCss3Alt, FaHtml5, FaNodeJs, FaReact, FaDocker } from "react-icons/fa";
+import {
+  SiExpress, SiJavascript, SiMongodb, SiMysql, SiNextdotjs,
+  SiTypescript, SiRedis, SiApachekafka, SiTailwindcss, SiStripe, SiDotnet,
+} from "react-icons/si";
 import { TbBrandRedux } from "react-icons/tb";
 
-const skills = [
-  {
-    id: 1,
-    skill: "HTML5",
-    icon: <FaHtml5 />,
-    color: "#E44D26",
-  },
-  {
-    id: 2,
-    skill: "CSS3",
-    icon: <FaCss3Alt />,
-    color: "#264DE4",
-  },
-  {
-    id: 3,
-    skill: "JavaScript",
-    icon: <SiJavascript />,
-    color: "#F0DB4F",
-  },
-  {
-    id: 4,
-    skill: "React JS",
-    icon: <FaReact />,
-    color: "#61DBFB",
-  },
-  {
-    id: 5,
-    skill: "Redux JS",
-    icon: <TbBrandRedux />,
-    color: "#764ABC",
-  },
-  {
-    id: 6,
-    skill: "Node JS",
-    icon: <FaNodeJs />,
-    color: "#3C873A",
-  },
-  {
-    id: 7,
-    skill: "Express JS",
-    icon: <SiExpress />,
-    color: "#FFFFFF",
-  },
-  {
-    id: 8,
-    skill: "Mongo DB",
-    icon: <SiMongodb />,
-    color: "#47A248",
-  },
-  {
-    id: 9,
-    skill: "Java",
-    icon: <FaJava />,
-    color: "#f89820",
-  },
-  {
-    id: 10,
-    skill: "SQL",
-    icon: <SiMysql />,
-    color: "#00758F",
-  },
-];
+const categories = {
+  Frontend: [
+    { skill: "React.js", icon: <FaReact />, color: "#61DBFB" },
+    { skill: "Next.js", icon: <SiNextdotjs />, color: "#FFFFFF" },
+    { skill: "TypeScript", icon: <SiTypescript />, color: "#3178C6" },
+    { skill: "JavaScript", icon: <SiJavascript />, color: "#F0DB4F" },
+    { skill: "Redux", icon: <TbBrandRedux />, color: "#764ABC" },
+    { skill: "Tailwind", icon: <SiTailwindcss />, color: "#38BDF8" },
+    { skill: "HTML5", icon: <FaHtml5 />, color: "#E44D26" },
+    { skill: "CSS3", icon: <FaCss3Alt />, color: "#264DE4" },
+  ],
+  Backend: [
+    { skill: "Node.js", icon: <FaNodeJs />, color: "#3C873A" },
+    { skill: "Express.js", icon: <SiExpress />, color: "#FFFFFF" },
+    { skill: ".NET / C#", icon: <SiDotnet />, color: "#9B7EF0" },
+    { skill: "Kafka", icon: <SiApachekafka />, color: "#FFFFFF" },
+    { skill: "Stripe", icon: <SiStripe />, color: "#6772E5" },
+  ],
+  "Data & DevOps": [
+    { skill: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
+    { skill: "MySQL", icon: <SiMysql />, color: "#5e8fb1" },
+    { skill: "Redis", icon: <SiRedis />, color: "#D82C20" },
+    { skill: "Docker", icon: <FaDocker />, color: "#2496ED" },
+  ],
+};
+
+const categoryKeys = Object.keys(categories);
 
 const Skills = () => {
+  const [active, setActive] = useState("Frontend");
+  const skills = categories[active];
+
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4 xl:px-40 m-auto">
-      {skills.map((skill) => (
-        <div
-          key={skill.id}
-          className="h-[130px] w-[130px] shrink-0 box-content bg-[#848191] rounded-md p-5 flex items-center justify-evenly flex-col hover:bg-[#7562E0] hover:-translate-y-1 hover:scale-100 duration-300"
-        >
-          {React.cloneElement(skill.icon, { size: 50, color: skill.color })}
-          <p className="text-[20px] text-white text-center font-medium">
-            {skill.skill}
-          </p>
-        </div>
-      ))}
+    <div>
+      {/* Category tabs */}
+      <div className="flex flex-wrap gap-2 mb-8 justify-center">
+        {categoryKeys.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActive(cat)}
+            className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+              active === cat ? "text-white" : "text-gray-400 hover:text-gray-200"
+            }`}
+          >
+            {active === cat && (
+              <motion.span
+                layoutId="skillTab"
+                className="absolute inset-0 bg-accent-gradient rounded-full"
+                transition={{ type: "spring", duration: 0.5 }}
+              />
+            )}
+            <span className="relative z-10">{cat}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Skill grid */}
+      <motion.div
+        key={active}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3"
+      >
+        {skills.map((skill, i) => (
+          <motion.div
+            key={skill.skill}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: i * 0.04 }}
+            whileHover={{ y: -6, scale: 1.04 }}
+            className="group relative aspect-square glass rounded-2xl p-4 flex flex-col items-center justify-center gap-2 border border-white/5 hover:border-accent/40 transition-colors duration-300 cursor-default overflow-hidden"
+          >
+            {/* Hover glow */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"
+              style={{
+                background: `radial-gradient(circle at center, ${skill.color}25, transparent 70%)`,
+              }}
+            />
+            <div className="relative">
+              {React.cloneElement(skill.icon, { size: 36, color: skill.color })}
+            </div>
+            <p className="relative text-[12px] sm:text-[13px] text-gray-300 group-hover:text-white text-center font-medium transition">
+              {skill.skill}
+            </p>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 };

@@ -1,16 +1,17 @@
-import React from 'react'
-import Projects from '../components/Projects'
+import Projects from "../components/Projects";
+import SectionHeader from "../components/SectionHeader";
 
 const Project = () => {
   return (
-    <div className='lg:px-30 md:px-20 px-5 bg-[#1A1A29]'>
-      <p className="text-[32px] text-[#7562E0] font-semibold pt-10">Featured projects:</p>
-      <p>I have worked on many projects over the course of being a Web Developer, here are a few of my live, real-world projects</p>
-      <div className='m-auto'>
-        <Projects/>
-      </div>
+    <div className="px-5 sm:px-8 md:px-16 lg:px-24 xl:px-36 pt-24 pb-20">
+      <SectionHeader
+        eyebrow="Selected Work"
+        title="Projects I'm proud of"
+        description="Real applications I've shipped — from high-traffic booking systems to distributed e-commerce platforms serving thousands of users daily."
+      />
+      <Projects />
     </div>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;
