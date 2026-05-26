@@ -36,19 +36,19 @@ const experiences = [
     summary:
       "Architecting .NET 8 microservices and modern web platforms for enterprise-scale clients.",
     hero: { value: 100, suffix: "K+", label: "Users Served" },
-    bullets: [
-      { icon: <HiOutlineCircleStack />, text: "Built .NET 8 C# microservices serving 100K+ users with high availability" },
-      { icon: <HiOutlineCheckBadge />, text: "Implemented OAuth 2.0 & JWT authentication for secure access control" },
-      { icon: <HiOutlineBolt />, text: "Optimized database queries and indexing, reducing latency by 35%" },
-      { icon: <HiOutlineUsers />, text: "Mentored junior developers through code reviews and technical guidance" },
-    ],
-    stack: [
-      { name: ".NET 8", icon: <SiDotnet />, color: "#9B7EF0" },
-      { name: "C#", icon: <SiCsharp />, color: "#9B4F96" },
-      { name: "Azure", icon: <SiMicrosoftazure />, color: "#0078D4" },
-      { name: "OAuth 2.0", icon: <SiOpenid />, color: "#F78C40" },
-      { name: "JWT", icon: <SiJsonwebtokens />, color: "#D63AFF" },
-    ],
+    // bullets: [
+    //   { icon: <HiOutlineCircleStack />, text: "Built .NET 8 C# microservices serving 100K+ users with high availability" },
+    //   { icon: <HiOutlineCheckBadge />, text: "Implemented OAuth 2.0 & JWT authentication for secure access control" },
+    //   { icon: <HiOutlineBolt />, text: "Optimized database queries and indexing, reducing latency by 35%" },
+    //   { icon: <HiOutlineUsers />, text: "Mentored junior developers through code reviews and technical guidance" },
+    // ],
+    // stack: [
+    //   { name: ".NET 8", icon: <SiDotnet />, color: "#9B7EF0" },
+    //   { name: "C#", icon: <SiCsharp />, color: "#9B4F96" },
+    //   { name: "Azure", icon: <SiMicrosoftazure />, color: "#0078D4" },
+    //   { name: "OAuth 2.0", icon: <SiOpenid />, color: "#F78C40" },
+    //   { name: "JWT", icon: <SiJsonwebtokens />, color: "#D63AFF" },
+    // ],
   },
   {
     company: "Shekru Labs Pvt Ltd",
