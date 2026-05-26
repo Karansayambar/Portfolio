@@ -36,19 +36,19 @@ const experiences = [
     summary:
       "Architecting .NET 8 microservices and modern web platforms for enterprise-scale clients.",
     hero: { value: 100, suffix: "K+", label: "Users Served" },
-    // bullets: [
-    //   { icon: <HiOutlineCircleStack />, text: "Built .NET 8 C# microservices serving 100K+ users with high availability" },
-    //   { icon: <HiOutlineCheckBadge />, text: "Implemented OAuth 2.0 & JWT authentication for secure access control" },
-    //   { icon: <HiOutlineBolt />, text: "Optimized database queries and indexing, reducing latency by 35%" },
-    //   { icon: <HiOutlineUsers />, text: "Mentored junior developers through code reviews and technical guidance" },
-    // ],
-    // stack: [
-    //   { name: ".NET 8", icon: <SiDotnet />, color: "#9B7EF0" },
-    //   { name: "C#", icon: <SiCsharp />, color: "#9B4F96" },
-    //   { name: "Azure", icon: <SiMicrosoftazure />, color: "#0078D4" },
-    //   { name: "OAuth 2.0", icon: <SiOpenid />, color: "#F78C40" },
-    //   { name: "JWT", icon: <SiJsonwebtokens />, color: "#D63AFF" },
-    // ],
+   bullets: [
+  { icon: <HiOutlineComputerDesktop />, text: "Developed responsive and reusable frontend modules using React.js and TypeScript" },
+  { icon: <HiOutlineSquares2X2 />, text: "Built dynamic UI components, forms, and dashboards with scalable architecture" },
+  { icon: <HiOutlineBolt />, text: "Optimized frontend performance, reducing page load time and improving user experience" },
+  { icon: <HiOutlineUsers />, text: "Collaborated closely with backend and design teams for seamless API integration and UI delivery" },
+ ],
+stack: [
+  { name: "React.js", icon: <SiReact />, color: "#61DAFB" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6" },
+  { name: "Next.js", icon: <SiNextdotjs />, color: "#000000" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38BDF8" },
+  { name: "TanStack Query", icon: <SiRedux />, color: "#764ABC" },
+ ],
   },
   {
     company: "Shekru Labs Pvt Ltd",
